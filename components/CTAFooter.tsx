@@ -1,0 +1,201 @@
+'use client'
+
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import Container from './ui/Container'
+import Toast from './ui/Toast'
+
+export default function CTAFooter() {
+  const [email, setEmail] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [showToast, setShowToast] = useState(false)
+  const [toastMessage, setToastMessage] = useState('')
+  const [toastType, setToastType] = useState<'success' | 'error'>('success')
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    if (!email.trim()) {
+      setToastMessage('Please enter your email address')
+      setToastType('error')
+      setShowToast(true)
+      return
+    }
+
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      setToastMessage('Please enter a valid email address')
+      setToastType('error')
+      setShowToast(true)
+      return
+    }
+
+    setIsSubmitting(true)
+
+    // TODO: Integrate with actual email service
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000))
+      
+      console.log('Email submitted:', email)
+      setToastMessage('Thanks for joining! We\'ll keep you updated on our launch.')
+      setToastType('success')
+      setShowToast(true)
+      setEmail('')
+    } catch (error) {
+      setToastMessage('Something went wrong. Please try again.')
+      setToastType('error')
+      setShowToast(true)
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: 'easeOut' }
+    }
+  }
+
+  return (
+    <footer className="py-8 bg-white">
+      <div className="max-w-none mx-auto px-4 lg:px-6">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="w-full px-16 pt-16 pb-8 relative bg-detour-gray900 rounded-3xl flex flex-col justify-start items-start gap-14"
+        >
+          {/* Main CTA Section */}
+          <motion.div 
+            variants={itemVariants}
+            className="w-full flex justify-between items-center"
+          >
+            {/* Left Side - Headline */}
+            <div className="flex-1 max-w-[651px] justify-start text-white text-6xl font-semibold font-inter leading-[83.20px]">
+              Join the Adventure Today!
+            </div>
+            
+            {/* Right Side - Form */}
+            <div className="flex-1 max-w-[577px] flex flex-col justify-end items-start gap-4">
+              <div className="self-stretch justify-start text-white text-lg font-normal font-inter leading-relaxed tracking-tight">
+                Ready to explore the world? Share your preferences with us to start your journey.
+              </div>
+              
+              {/* Email Form */}
+              <form onSubmit={handleSubmit} className="self-stretch">
+                <div className="self-stretch pl-4 pr-2 py-2 bg-white/10 rounded-3xl border border-black/20 flex justify-between items-center">
+                  <input
+                    type="email"
+                    placeholder="Your Email Here"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="flex-1 bg-transparent text-white placeholder-white/60 text-base font-normal font-inter leading-snug tracking-tight focus:outline-none"
+                  />
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="h-12 px-5 py-2.5 bg-gradient-to-b from-orange-400 to-orange-600 rounded-2xl border border-white text-white text-base font-medium hover:from-orange-500 hover:to-orange-700 transition-all duration-200"
+                  >
+                    {isSubmitting ? 'Signing Up...' : 'Sign Up'}
+                  </button>
+                </div>
+              </form>
+              
+              <div className="self-stretch justify-start text-white text-xs font-normal font-inter leading-none tracking-tight">
+                By clicking Sign Up, you agree to our Terms and Conditions.
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Milan-Florence Image Section */}
+          <motion.div 
+            variants={itemVariants}
+            className="w-64 h-32 absolute left-[293px] top-[171px] flex justify-center items-center"
+          >
+            <div className="w-64 h-32 relative">
+              <Image
+                src="/detour/features/Milan-Florence 1.png"
+                alt="Milan to Florence route"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </motion.div>
+
+          {/* Footer Navigation */}
+          <motion.div 
+            variants={itemVariants}
+            className="self-stretch flex flex-col justify-start items-start gap-4"
+          >
+            {/* Navigation Bar */}
+            <div className="self-stretch h-14 bg-detour-gray900 rounded-2xl flex justify-between items-center px-6 overflow-hidden">
+              <div className="flex justify-start items-center gap-1.5">
+                <Image
+                  src="/detour/branding/logo/horizontal/all-white.png"
+                  alt="Detour"
+                  width={120}
+                  height={32}
+                  className="object-contain"
+                />
+              </div>
+              <div className="flex justify-start items-center space-x-10">
+                <a href="#how-it-works" className="text-white hover:text-detour-primary font-medium transition-colors text-sm">
+                  How it Works
+                </a>
+                <a href="#features" className="text-white hover:text-detour-primary font-medium transition-colors text-sm">
+                  Features
+                </a>
+                <a href="/docs" className="text-white hover:text-detour-primary font-medium transition-colors text-sm">
+                  Documentation
+                </a>
+                <a href="/contact" className="text-white hover:text-detour-primary font-medium transition-colors text-sm">
+                  Contact
+                </a>
+              </div>
+            </div>
+            
+            {/* Bottom Links */}
+            <div className="self-stretch flex justify-between items-center">
+              <div className="text-white text-base font-normal font-inter leading-tight">
+                All rights reserved® Detour 2025
+              </div>
+              <div className="flex justify-start items-center gap-6">
+                <a href="/cookies" className="text-white/60 text-base font-medium font-inter leading-tight hover:text-white transition-colors">
+                  Cookie Policy
+                </a>
+                <a href="/privacy" className="text-white/60 text-base font-medium font-inter leading-tight hover:text-white transition-colors">
+                  Privacy Policy
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Toast Notification */}
+      {showToast && (
+        <Toast
+          message={toastMessage}
+          type={toastType}
+          onClose={() => setShowToast(false)}
+        />
+      )}
+    </footer>
+  )
+}
