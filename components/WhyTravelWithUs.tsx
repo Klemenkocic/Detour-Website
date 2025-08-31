@@ -10,7 +10,7 @@ export default function WhyTravelWithUs() {
           {/* Left column: Title */}
           <div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-detour-gray900 relative">
-              Why you'll <span className="relative">
+              Why you&apos;ll <span className="relative">
                 <p className="absolute -top-8 left-0 text-4xl md:text-5xl text-detour-primary font-covered-by-your-grace">Love</p>
                 <span className="line-through">like</span>
               </span> traveling<br />with us
@@ -20,7 +20,7 @@ export default function WhyTravelWithUs() {
           {/* Right column: Description */}
           <div className="flex items-center">
             <p className="text-lg text-detour-gray700 leading-relaxed">
-              Detour isn't just another trip planner — it's your personal adventure curator, making every journey smoother, more beautiful, and full of surprises.
+              Detour isn&apos;t just another trip planner — it&apos;s your personal adventure curator, making every journey smoother, more beautiful, and full of surprises.
             </p>
           </div>
         </div>
@@ -76,7 +76,7 @@ export default function WhyTravelWithUs() {
           <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-lg h-full">
             <h3 className="text-xl font-bold text-detour-gray900 mb-3">Visual Inspiration Built In</h3>
             <p className="text-detour-gray700 mb-6">
-              Every stop comes with stunning photos and local insights to help you decide what's worth the detour, turning your planning process into an inspiring part of the journey.
+              Every stop comes with stunning photos and local insights to help you decide what&apos;s worth the detour, turning your planning process into an inspiring part of the journey.
             </p>
             <div className="relative aspect-[6/5] rounded-lg overflow-hidden">
               <Image

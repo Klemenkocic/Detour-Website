@@ -3,7 +3,7 @@
 import { HTMLAttributes } from 'react'
 import { motion } from 'framer-motion'
 
-interface CardProps extends HTMLAttributes<HTMLDivElement> {
+interface CardProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onDrag' | 'onDragEnd' | 'onDragStart' | 'onAnimationStart' | 'onAnimationEnd' | 'onTransitionEnd'> {
   children: React.ReactNode
   hover?: boolean
 }

@@ -45,7 +45,7 @@ export default function IdeaToAdventure() {
                 From idea to adventure in just a few clicks
               </div>
               <div className="w-[457px] justify-start text-detour-gray700 text-lg font-normal font-inter leading-relaxed tracking-tight">
-                We've simplified trip planning so you can spend less time organizing and more time exploring. Here's how Detour transforms your idea into a fully visualized, ready-to-go adventure.
+                We&apos;ve simplified trip planning so you can spend less time organizing and more time exploring. Here&apos;s how Detour transforms your idea into a fully visualized, ready-to-go adventure.
               </div>
               <Button 
                 variant="primary" 
@@ -121,7 +121,7 @@ export default function IdeaToAdventure() {
                       Point on the Map,<br/>Set the pace
                     </div>
                     <div className="self-stretch justify-start text-detour-gray700 text-base font-normal font-inter leading-snug tracking-tight">
-                      Enter your start and end points, pick your travel dates or trip duration, choose your ride and set your budget. Whether it's a weekend getaway or a month-long road trip, Detour adapts to your style and pace.
+                      Enter your start and end points, pick your travel dates or trip duration, choose your ride and set your budget. Whether it&apos;s a weekend getaway or a month-long road trip, Detour adapts to your style and pace.
                     </div>
                   </div>
                 </div>

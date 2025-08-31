@@ -1,1 +1,11 @@
-{}
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/sitemap/route": "app/api/sitemap/route.js",
+  "/page": "app/page.js",
+  "/(legal)/privacy/page": "app/(legal)/privacy/page.js",
+  "/quiz/page": "app/quiz/page.js",
+  "/(legal)/cookies/page": "app/(legal)/cookies/page.js",
+  "/docs/page": "app/docs/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/opengraph-image/route": "app/opengraph-image/route.js"
+}
