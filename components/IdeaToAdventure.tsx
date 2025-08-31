@@ -40,7 +40,7 @@ export default function IdeaToAdventure() {
             className="w-full h-[851px] px-4 sm:px-8 lg:px-16 pt-20 pb-24 relative bg-detour-primarySoft rounded-3xl flex flex-col justify-start items-start gap-8 overflow-hidden"
           >
             {/* Header Content */}
-            <div className="flex flex-col justify-start items-start gap-6">
+            <div className="relative z-10 flex flex-col justify-start items-start gap-6">
               <div className="w-[526px] justify-start text-detour-gray900 text-5xl font-semibold font-inter leading-[57.60px] tracking-tight">
                 From idea to adventure in just a few clicks
               </div>

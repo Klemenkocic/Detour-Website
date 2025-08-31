@@ -42,7 +42,7 @@ export default function SeeBeforeBegins() {
           <div className="relative z-10 max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-20 items-center">
               {/* Left Side - Content with 3 rows */}
-              <motion.div variants={itemVariants} className="relative">
+              <motion.div variants={itemVariants} className="relative z-10">
                 <div className="max-w-[568px] flex flex-col justify-center gap-6">
                   {/* Row 1: Header */}
                   <div className="relative">
@@ -63,8 +63,8 @@ export default function SeeBeforeBegins() {
                   </p>
                   
                   {/* Row 3: CTA Button */}
-                  <div>
-                    <Button className="h-12 px-5 py-2.5 bg-gradient-to-b from-orange-400 to-orange-600 rounded-2xl border border-white text-white text-base font-medium">
+                  <div className="relative z-20">
+                    <Button className="relative z-20 h-12 px-5 py-2.5 bg-gradient-to-b from-orange-400 to-orange-600 rounded-2xl border border-white text-white text-base font-medium">
                       Start Free Trial
                     </Button>
                   </div>
@@ -74,7 +74,7 @@ export default function SeeBeforeBegins() {
               {/* Right Side - CTA Image */}
               <motion.div variants={itemVariants} className="relative">
                 <div 
-                  className="absolute z-[100]"
+                  className="absolute z-[5]"
                   style={{
                     // === IMAGE CONFIGURATION ===
                     // Adjust these values to position and size the image:
