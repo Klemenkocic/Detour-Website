@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import LocalVsTourist from '../components/LocalVsTourist'
 import TripStyleQuiz from '../components/TripStyleQuiz'
@@ -61,12 +63,12 @@ export default function Home() {
             </div>
             
             {/* Content */}
-            <div className="relative z-10 text-left text-white px-12">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-6">
-                Your Next <span className="relative"><span className="line-through">Trip</span><span className="absolute -top-8 left-0 text-detour-primary text-2xl md:text-3xl lg:text-4xl font-covered-by-your-grace">Adventure</span></span>, Planned<br />
+            <div className="relative z-10 text-left text-white px-6 sm:px-12">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-4 sm:mb-6">
+                Your Next <span className="relative"><span className="line-through">Trip</span><span className="absolute -top-4 sm:-top-6 md:-top-8 left-0 text-detour-primary text-lg sm:text-2xl md:text-3xl lg:text-4xl font-covered-by-your-grace">Adventure</span></span>, Planned<br />
                 <span className="text-white">in Minutes</span>
               </h1>
-              <p className="text-lg md:text-xl lg:text-2xl text-white/95 mb-8 max-w-2xl leading-relaxed font-normal">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 mb-6 sm:mb-8 max-w-2xl leading-relaxed font-normal">
                 Set your starting point and destination to begin your journey.<br />
                 It&apos;s quick, simple, and built to get you moving.
               </p>

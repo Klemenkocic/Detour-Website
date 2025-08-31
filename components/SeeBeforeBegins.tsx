@@ -40,7 +40,7 @@ export default function SeeBeforeBegins() {
 
           {/* Main Content */}
           <div className="relative z-10 max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
               {/* Left Side - Content with 3 rows */}
               <motion.div variants={itemVariants} className="relative z-10">
                 <div className="max-w-[568px] flex flex-col justify-center gap-6">
