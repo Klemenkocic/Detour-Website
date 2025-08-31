@@ -15,14 +15,16 @@ export default function Home() {
           <div className="flex items-center justify-between py-3">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <Image
-                src="/detour/branding/logo/horizontal/dark and primary.png"
-                alt="Detour"
-                width={140}
-                height={40}
-                className="object-contain"
-                priority
-              />
+              <a href="#" className="cursor-pointer" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+                <Image
+                  src="/detour/branding/logo/horizontal/dark and primary.png"
+                  alt="Detour"
+                  width={140}
+                  height={40}
+                  className="object-contain"
+                  priority
+                />
+              </a>
             </div>
             
             {/* Navigation Links */}

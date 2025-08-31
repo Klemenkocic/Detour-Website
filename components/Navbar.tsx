@@ -58,9 +58,11 @@ export default function Navbar() {
           <nav className="flex items-center justify-between py-4">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <div className="text-2xl font-bold text-detour-primary">
-                Detour
-              </div>
+              <a href="#" className="cursor-pointer" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+                <div className="text-2xl font-bold text-detour-primary">
+                  Detour
+                </div>
+              </a>
             </div>
 
             {/* Desktop Navigation */}
@@ -128,9 +130,11 @@ export default function Navbar() {
               <div className="flex flex-col h-full">
                 {/* Mobile Menu Header */}
                 <div className="flex items-center justify-between p-6 border-b border-detour-gray100">
-                  <div className="text-xl font-bold text-detour-primary">
-                    Detour
-                  </div>
+                  <a href="#" className="cursor-pointer" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); setIsMobileMenuOpen(false); }}>
+                    <div className="text-xl font-bold text-detour-primary">
+                      Detour
+                    </div>
+                  </a>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="p-2 rounded-lg hover:bg-detour-gray100 transition-colors duration-200"
