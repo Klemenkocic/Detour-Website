@@ -1,55 +1,10 @@
 'use client'
 
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import Container from './ui/Container'
-import Toast from './ui/Toast'
+import Link from 'next/link'
 
 export default function CTAFooter() {
-  const [email, setEmail] = useState('')
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [showToast, setShowToast] = useState(false)
-  const [toastMessage, setToastMessage] = useState('')
-  const [toastType, setToastType] = useState<'success' | 'error'>('success')
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    
-    if (!email.trim()) {
-      setToastMessage('Please enter your email address')
-      setToastType('error')
-      setShowToast(true)
-      return
-    }
-
-    if (!/\S+@\S+\.\S+/.test(email)) {
-      setToastMessage('Please enter a valid email address')
-      setToastType('error')
-      setShowToast(true)
-      return
-    }
-
-    setIsSubmitting(true)
-
-    // TODO: Integrate with actual email service
-    try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      
-      console.log('Email submitted:', email)
-      setToastMessage('Thanks for joining! We\'ll keep you updated on our launch.')
-      setToastType('success')
-      setShowToast(true)
-      setEmail('')
-    } catch (error) {
-      setToastMessage('Something went wrong. Please try again.')
-      setToastType('error')
-      setShowToast(true)
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -91,34 +46,19 @@ export default function CTAFooter() {
               Join the Adventure Today!
             </div>
             
-            {/* Right Side - Form */}
+            {/* Right Side - CTA Button */}
             <div className="w-full lg:flex-1 lg:max-w-[577px] flex flex-col justify-end items-start gap-4">
               <div className="self-stretch justify-start text-white text-lg font-normal font-inter leading-relaxed tracking-tight">
-                Ready to explore the world? Share your preferences with us to start your journey.
+                Ready to explore the world? Start your journey with us today.
               </div>
               
-              {/* Email Form */}
-              <form onSubmit={handleSubmit} className="self-stretch">
-                <div className="self-stretch pl-4 pr-2 py-2 bg-white/10 rounded-3xl border border-black/20 flex justify-between items-center">
-                  <input
-                    type="email"
-                    placeholder="Your Email Here"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 bg-transparent text-white placeholder-white/60 text-base font-normal font-inter leading-snug tracking-tight focus:outline-none"
-                  />
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="h-12 px-5 py-2.5 bg-gradient-to-b from-orange-400 to-orange-600 rounded-2xl border border-white text-white text-base font-medium hover:from-orange-500 hover:to-orange-700 transition-all duration-200"
-                  >
-                    {isSubmitting ? 'Signing Up...' : 'Sign Up'}
+              {/* CTA Button */}
+              <div className="self-stretch">
+                <Link href="/quiz">
+                  <button className="h-12 px-5 py-2.5 bg-gradient-to-b from-orange-400 to-orange-600 rounded-2xl border border-white text-white text-base font-medium hover:from-orange-500 hover:to-orange-700 transition-all duration-200">
+                    Get Early Access
                   </button>
-                </div>
-              </form>
-              
-              <div className="self-stretch justify-start text-white text-xs font-normal font-inter leading-none tracking-tight">
-                By clicking Sign Up, you agree to our Terms and Conditions.
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -187,15 +127,6 @@ export default function CTAFooter() {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Toast Notification */}
-      {showToast && (
-        <Toast
-          message={toastMessage}
-          type={toastType}
-          onClose={() => setShowToast(false)}
-        />
-      )}
     </footer>
   )
 }

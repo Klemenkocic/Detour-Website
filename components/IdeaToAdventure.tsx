@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import Container from './ui/Container'
 import Button from './ui/Button'
 
@@ -47,12 +48,14 @@ export default function IdeaToAdventure() {
               <div className="w-[457px] justify-start text-detour-gray700 text-lg font-normal font-inter leading-relaxed tracking-tight">
                 We&apos;ve simplified trip planning so you can spend less time organizing and more time exploring. Here&apos;s how Detour transforms your idea into a fully visualized, ready-to-go adventure.
               </div>
-              <Button 
-                variant="primary" 
-                size="lg"
-              >
-                Start Planning
-              </Button>
+                            <Link href="/quiz">
+                <Button 
+                  variant="primary"
+                  size="lg"
+                >
+                  Get Early Access
+                </Button>
+              </Link>
             </div>
 
             {/* Interactive Area - Exact Positioning */}

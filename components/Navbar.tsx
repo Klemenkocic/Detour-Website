@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
 import Button from './ui/Button'
 import Container from './ui/Container'
 
@@ -80,9 +81,11 @@ export default function Navbar() {
 
             {/* Desktop CTA */}
             <div className="hidden md:block">
-              <Button size="md">
-                Start Planning
-              </Button>
+              <Link href="/quiz">
+                <Button size="md">
+                  Get Early Access
+                </Button>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -164,9 +167,11 @@ export default function Navbar() {
 
                 {/* Mobile CTA */}
                 <div className="p-6 border-t border-detour-gray100">
-                  <Button size="lg" className="w-full">
-                    Start Planning
-                  </Button>
+                  <Link href="/quiz">
+                    <Button size="lg" className="w-full">
+                      Get Early Access
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </motion.div>

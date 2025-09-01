@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import Container from './ui/Container'
 import Button from './ui/Button'
 
@@ -64,9 +65,11 @@ export default function SeeBeforeBegins() {
                   
                   {/* Row 3: CTA Button */}
                   <div className="relative z-20">
-                    <Button className="relative z-20 h-12 px-5 py-2.5 bg-gradient-to-b from-orange-400 to-orange-600 rounded-2xl border border-white text-white text-base font-medium">
-                      Start Free Trial
-                    </Button>
+                    <Link href="/quiz">
+                      <Button className="relative z-20 h-12 px-5 py-2.5 bg-gradient-to-b from-orange-400 to-orange-600 rounded-2xl border border-white text-white text-base font-medium">
+                        Get Early Access
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </motion.div>

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import Button from './ui/Button'
 import Container from './ui/Container'
 
@@ -77,9 +78,11 @@ export default function Hero() {
 
           {/* CTA Button */}
           <motion.div variants={itemVariants}>
-            <Button size="lg">
-              Start Planning
-            </Button>
+            <Link href="/quiz">
+              <Button size="lg">
+                Get Early Access
+              </Button>
+            </Link>
           </motion.div>
 
           {/* Additional Info */}

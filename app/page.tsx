@@ -38,9 +38,9 @@ export default function Home() {
             </div>
             
             {/* CTA Button */}
-            <button className="h-12 px-5 py-2.5 bg-gradient-to-b from-orange-400 to-orange-600 rounded-2xl border border-white text-white text-base font-medium hover:from-orange-500 hover:to-orange-700 transition-all duration-200">
-              Start Planning
-            </button>
+            <a href="/quiz" className="h-12 px-5 py-2.5 bg-gradient-to-b from-orange-400 to-orange-600 rounded-2xl border border-white text-white text-base font-medium hover:from-orange-500 hover:to-orange-700 transition-all duration-200 inline-flex items-center justify-center">
+              Get Early Access
+            </a>
           </div>
         </div>
       </nav>
@@ -72,9 +72,9 @@ export default function Home() {
                 Set your starting point and destination to begin your journey.<br />
                 It&apos;s quick, simple, and built to get you moving.
               </p>
-              <button className="h-12 px-5 py-2.5 bg-gradient-to-b from-orange-400 to-orange-600 rounded-2xl border border-white text-white text-base font-medium hover:from-orange-500 hover:to-orange-700 transition-all duration-200">
-                Start Planning
-              </button>
+              <a href="/quiz" className="h-12 px-5 py-2.5 bg-gradient-to-b from-orange-400 to-orange-600 rounded-2xl border border-white text-white text-base font-medium hover:from-orange-500 hover:to-orange-700 transition-all duration-200 inline-flex items-center justify-center">
+                Get Early Access
+              </a>
             </div>
           </div>
         </div>

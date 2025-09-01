@@ -48,7 +48,7 @@ export default function TripStyleQuiz() {
               href="/quiz"
               className="inline-block h-12 px-5 py-2.5 bg-gradient-to-b from-orange-400 to-orange-600 rounded-2xl border border-white text-white text-base font-medium hover:from-orange-500 hover:to-orange-700 transition-all duration-200"
             >
-              Help Shape Adventures
+              Get Early Access
             </Link>
           </div>
         </div>
