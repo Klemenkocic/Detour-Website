@@ -1,11 +1,36 @@
 import Link from 'next/link'
+import { motion } from 'framer-motion'
+import SmartCTAButton from './SmartCTAButton'
 
 export default function TripStyleQuiz() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.6, staggerChildren: 0.2 }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: 'easeOut' }
+    }
+  }
+
   return (
     <section className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        {/* Blue Container - Made bigger */}
-        <div className="bg-detour-sky rounded-3xl p-16 relative">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          {/* Blue Container - Made bigger */}
+          <motion.div variants={itemVariants} className="bg-detour-sky rounded-3xl p-16 relative">
           {/* Handwritten text with arrow - positioned outside and angled */}
           <div className="absolute -top-12 left-16 transform -rotate-12">
             <span className="text-black text-2xl md:text-3xl font-covered-by-your-grace block">
@@ -44,14 +69,12 @@ export default function TripStyleQuiz() {
             </p>
             
             {/* CTA Button */}
-            <Link 
-              href="/quiz"
-              className="inline-block h-12 px-5 py-2.5 bg-gradient-to-b from-orange-400 to-orange-600 rounded-2xl border border-white text-white text-base font-medium hover:from-orange-500 hover:to-orange-700 transition-all duration-200"
-            >
+            <SmartCTAButton>
               Get Early Access
-            </Link>
+            </SmartCTAButton>
           </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )

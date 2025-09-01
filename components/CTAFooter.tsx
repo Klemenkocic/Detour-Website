@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import SmartCTAButton from './SmartCTAButton'
 
 export default function CTAFooter() {
 
@@ -54,11 +55,9 @@ export default function CTAFooter() {
               
               {/* CTA Button */}
               <div className="self-stretch">
-                <Link href="/quiz">
-                  <button className="h-12 px-5 py-2.5 bg-gradient-to-b from-orange-400 to-orange-600 rounded-2xl border border-white text-white text-base font-medium hover:from-orange-500 hover:to-orange-700 transition-all duration-200">
-                    Get Early Access
-                  </button>
-                </Link>
+                <SmartCTAButton>
+                  Get Early Access
+                </SmartCTAButton>
               </div>
             </div>
           </motion.div>
@@ -95,12 +94,6 @@ export default function CTAFooter() {
                 />
               </div>
               <div className="flex flex-wrap justify-center sm:justify-start items-center gap-4 sm:space-x-10 sm:gap-0">
-                <a href="#how-it-works" className="text-white hover:text-detour-primary font-medium transition-colors text-sm">
-                  How it Works
-                </a>
-                <a href="#features" className="text-white hover:text-detour-primary font-medium transition-colors text-sm">
-                  Features
-                </a>
                 <a href="/docs" className="text-white hover:text-detour-primary font-medium transition-colors text-sm">
                   Documentation
                 </a>

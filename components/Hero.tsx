@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Button from './ui/Button'
 import Container from './ui/Container'
+import SmartCTAButton from './SmartCTAButton'
 
 export default function Hero() {
   const containerVariants = {
@@ -78,11 +79,9 @@ export default function Hero() {
 
           {/* CTA Button */}
           <motion.div variants={itemVariants}>
-            <Link href="/quiz">
-              <Button size="lg">
-                Get Early Access
-              </Button>
-            </Link>
+            <SmartCTAButton size="lg">
+              Get Early Access
+            </SmartCTAButton>
           </motion.div>
 
           {/* Additional Info */}

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import Button from './ui/Button'
 import Container from './ui/Container'
+import SmartCTAButton from './SmartCTAButton'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -32,8 +33,6 @@ export default function Navbar() {
   }, [isMobileMenuOpen])
 
   const navLinks = [
-    { href: '#how-it-works', label: 'How it Works' },
-    { href: '#features', label: 'Features' },
     { href: '/docs', label: 'Documentation' },
     { href: '/contact', label: 'Contact' },
   ]
@@ -59,7 +58,7 @@ export default function Navbar() {
           <nav className="flex items-center justify-between py-4">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <a href="#" className="cursor-pointer" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+              <a href="/" className="cursor-pointer">
                 <div className="text-2xl font-bold text-detour-primary">
                   Detour
                 </div>
@@ -81,11 +80,9 @@ export default function Navbar() {
 
             {/* Desktop CTA */}
             <div className="hidden md:block">
-              <Link href="/quiz">
-                <Button size="md">
-                  Get Early Access
-                </Button>
-              </Link>
+              <SmartCTAButton size="md">
+                Get Early Access
+              </SmartCTAButton>
             </div>
 
             {/* Mobile Menu Button */}
@@ -133,7 +130,7 @@ export default function Navbar() {
               <div className="flex flex-col h-full">
                 {/* Mobile Menu Header */}
                 <div className="flex items-center justify-between p-6 border-b border-detour-gray100">
-                  <a href="#" className="cursor-pointer" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); setIsMobileMenuOpen(false); }}>
+                  <a href="/" className="cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>
                     <div className="text-xl font-bold text-detour-primary">
                       Detour
                     </div>
@@ -167,11 +164,9 @@ export default function Navbar() {
 
                 {/* Mobile CTA */}
                 <div className="p-6 border-t border-detour-gray100">
-                  <Link href="/quiz">
-                    <Button size="lg" className="w-full">
-                      Get Early Access
-                    </Button>
-                  </Link>
+                  <SmartCTAButton size="lg" className="w-full">
+                    Get Early Access
+                  </SmartCTAButton>
                 </div>
               </div>
             </motion.div>

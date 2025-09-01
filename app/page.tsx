@@ -7,8 +7,13 @@ import WhyTravelWithUs from '../components/WhyTravelWithUs'
 import IdeaToAdventure from '../components/IdeaToAdventure'
 import SeeBeforeBegins from '../components/SeeBeforeBegins'
 import CTAFooter from '../components/CTAFooter'
+import ThankYouPopup from '../components/ThankYouPopup'
+import SmartCTAButton from '../components/SmartCTAButton'
+import { useTallyTracking } from '../hooks/useTallyTracking'
 
 export default function Home() {
+  const { showThankYou, closeThankYou } = useTallyTracking()
+
   return (
     <>
       {/* Navbar */}
@@ -17,7 +22,7 @@ export default function Home() {
           <div className="flex items-center justify-between py-3">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <a href="#" className="cursor-pointer" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+              <a href="/" className="cursor-pointer">
                 <Image
                   src="/detour/branding/logo/horizontal/dark and primary.png"
                   alt="Detour"
@@ -31,16 +36,14 @@ export default function Home() {
             
             {/* Navigation Links */}
             <div className="hidden md:flex items-center space-x-10">
-              <a href="#how-it-works" className="text-detour-gray700 hover:text-detour-primary font-medium transition-colors text-sm">How it Works</a>
-              <a href="#features" className="text-detour-gray700 hover:text-detour-primary font-medium transition-colors text-sm">Features</a>
-              <a href="#docs" className="text-detour-gray700 hover:text-detour-primary font-medium transition-colors text-sm">Documentation</a>
-              <a href="#contact" className="text-detour-gray700 hover:text-detour-primary font-medium transition-colors text-sm">Contact</a>
+              <a href="/docs" className="text-detour-gray700 hover:text-detour-primary font-medium transition-colors text-sm">Documentation</a>
+              <a href="/contact" className="text-detour-gray700 hover:text-detour-primary font-medium transition-colors text-sm">Contact</a>
             </div>
             
             {/* CTA Button */}
-            <a href="/quiz" className="h-12 px-5 py-2.5 bg-gradient-to-b from-orange-400 to-orange-600 rounded-2xl border border-white text-white text-base font-medium hover:from-orange-500 hover:to-orange-700 transition-all duration-200 inline-flex items-center justify-center">
+            <SmartCTAButton>
               Get Early Access
-            </a>
+            </SmartCTAButton>
           </div>
         </div>
       </nav>
@@ -72,9 +75,9 @@ export default function Home() {
                 Set your starting point and destination to begin your journey.<br />
                 It&apos;s quick, simple, and built to get you moving.
               </p>
-              <a href="/quiz" className="h-12 px-5 py-2.5 bg-gradient-to-b from-orange-400 to-orange-600 rounded-2xl border border-white text-white text-base font-medium hover:from-orange-500 hover:to-orange-700 transition-all duration-200 inline-flex items-center justify-center">
+              <SmartCTAButton>
                 Get Early Access
-              </a>
+              </SmartCTAButton>
             </div>
           </div>
         </div>
@@ -91,6 +94,9 @@ export default function Home() {
       <SeeBeforeBegins />
 
       <CTAFooter />
+      
+      {/* Thank You Popup */}
+      <ThankYouPopup isVisible={showThankYou} onClose={closeThankYou} />
     </>
   )
 }

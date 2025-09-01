@@ -1,12 +1,36 @@
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 export default function WhyTravelWithUs() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.6, staggerChildren: 0.2 }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: 'easeOut' }
+    }
+  }
+
   return (
     <section className="py-24 bg-white">
       <div className="max-w-[90rem] mx-auto px-6 lg:px-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
         
-        {/* Row 1: Header with 2 columns */}
-        <div className="grid grid-cols-2 gap-20 mb-20">
+          {/* Row 1: Header with 2 columns */}
+          <motion.div variants={itemVariants} className="grid grid-cols-2 gap-20 mb-20">
           {/* Left column: Title */}
           <div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-detour-gray900 relative">
@@ -23,10 +47,10 @@ export default function WhyTravelWithUs() {
               Detour isn&apos;t just another trip planner — it&apos;s your personal adventure curator, making every journey smoother, more beautiful, and full of surprises.
             </p>
           </div>
-        </div>
+          </motion.div>
 
-        {/* Row 2: Three columns with feature boxes */}
-        <div className="grid grid-cols-3 gap-10 items-start">
+          {/* Row 2: Three columns with feature boxes */}
+          <motion.div variants={itemVariants} className="grid grid-cols-3 gap-10 items-start">
           {/* Column 1: Interactive 2D & 3D Maps */}
           <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-lg h-full">
             <div className="relative aspect-[5/4] rounded-lg overflow-hidden mb-6">
@@ -54,7 +78,7 @@ export default function WhyTravelWithUs() {
               </p>
               <div className="relative aspect-[2/1] rounded-lg overflow-hidden">
                 <Image
-                  src="/detour/features/Milan-Florence 2.png"
+                  src="/detour/features/Milan-Florence.png"
                   alt="Milan to Florence route planning"
                   fill
                   className="object-contain"
@@ -88,7 +112,8 @@ export default function WhyTravelWithUs() {
               />
             </div>
           </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )
