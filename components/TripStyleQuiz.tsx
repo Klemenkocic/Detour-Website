@@ -21,25 +21,25 @@ export default function TripStyleQuiz() {
   }
 
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
+    <section className="py-12 sm:py-16 lg:py-20 xl:py-24 bg-white overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {/* Blue Container - Made bigger */}
-          <motion.div variants={itemVariants} className="bg-detour-sky rounded-3xl p-16 relative">
-          {/* Handwritten text with arrow - positioned outside and angled */}
-          <div className="absolute -top-12 left-16 transform -rotate-12">
-            <span className="text-black text-2xl md:text-3xl font-covered-by-your-grace block">
+          {/* Blue Container - Made responsive */}
+          <motion.div variants={itemVariants} className="bg-detour-sky rounded-2xl sm:rounded-3xl p-8 sm:p-12 lg:p-16 relative">
+          {/* Handwritten text with arrow - positioned outside and angled - hidden on mobile */}
+          <div className="hidden md:block absolute -top-12 left-16 transform -rotate-12">
+            <span className="text-black text-2xl lg:text-3xl font-covered-by-your-grace block">
               Hey, can you help us improve? :)
             </span>
             {/* Arrow pointing to button - positioned to not cover text */}
             <svg 
-              className="absolute w-24 h-12 transform rotate-45 z-10" 
-              style={{ top: '70px', right: '-32px' }}
+              className="absolute w-20 lg:w-24 h-10 lg:h-12 transform rotate-45 z-10" 
+              style={{ top: '60px', right: '-28px' }}
               viewBox="0 0 64 32" 
               fill="none"
             >
@@ -60,11 +60,11 @@ export default function TripStyleQuiz() {
           </div>
           
           <div className="text-center">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-detour-gray900 mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-detour-gray900 mb-4 sm:mb-6 leading-tight">
               How do you usually<br />plan a trip?
             </h2>
-            <p className="text-xl text-detour-gray700 mb-10">
-              Take a quick poll and tell us about your travel style<br />
+            <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-detour-gray700 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
+              Take a quick poll and tell us about your travel style<br className="hidden sm:block" />
               it only takes a minute!
             </p>
             

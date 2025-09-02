@@ -1,6 +1,7 @@
 'use client'
 
-import Image from 'next/image'
+import Navbar from '../components/Navbar'
+import Hero from '../components/Hero'
 import LocalVsTourist from '../components/LocalVsTourist'
 import TripStyleQuiz from '../components/TripStyleQuiz'
 import WhyTravelWithUs from '../components/WhyTravelWithUs'
@@ -8,7 +9,6 @@ import IdeaToAdventure from '../components/IdeaToAdventure'
 import SeeBeforeBegins from '../components/SeeBeforeBegins'
 import CTAFooter from '../components/CTAFooter'
 import ThankYouPopup from '../components/ThankYouPopup'
-import SmartCTAButton from '../components/SmartCTAButton'
 import { useTallyTracking } from '../hooks/useTallyTracking'
 
 export default function Home() {
@@ -16,72 +16,9 @@ export default function Home() {
 
   return (
     <>
-      {/* Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
-        <div className="w-full px-6 lg:px-8">
-          <div className="flex items-center justify-between py-3">
-            {/* Logo */}
-            <div className="flex-shrink-0">
-              <a href="/" className="cursor-pointer">
-                <Image
-                  src="/detour/branding/logo/horizontal/dark and primary.png"
-                  alt="Detour"
-                  width={140}
-                  height={40}
-                  className="object-contain"
-                  priority
-                />
-              </a>
-            </div>
-            
-            {/* Navigation Links */}
-            <div className="hidden md:flex items-center space-x-10">
-              <a href="/docs" className="text-detour-gray700 hover:text-detour-primary font-medium transition-colors text-sm">Documentation</a>
-              <a href="/contact" className="text-detour-gray700 hover:text-detour-primary font-medium transition-colors text-sm">Contact</a>
-            </div>
-            
-            {/* CTA Button */}
-            <SmartCTAButton>
-              Get Early Access
-            </SmartCTAButton>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
-      {/* Hero Section */}
-      <section className="pt-0 pb-8 bg-gray-50">
-        <div className="w-full px-6 lg:px-8">
-          <div className="relative min-h-[85vh] flex items-center justify-center overflow-hidden rounded-3xl mt-24">
-            {/* Background Image */}
-            <div className="absolute inset-0 z-0">
-              <Image
-                src="/detour/hero/hero.png"
-                alt="Interactive map showing a scenic road trip route with multiple stops including landmarks and points of interest"
-                fill
-                className="object-cover object-center rounded-3xl"
-                priority
-                sizes="100vw"
-              />
-              <div className="absolute inset-0 bg-black/20 rounded-3xl" />
-            </div>
-            
-            {/* Content */}
-            <div className="relative z-10 text-center text-white px-6 sm:px-12">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-4 sm:mb-6">
-                Your Next <span className="relative"><span className="line-through">Trip</span><span className="absolute -top-4 sm:-top-6 md:-top-8 left-0 text-detour-primary text-lg sm:text-2xl md:text-3xl lg:text-4xl font-covered-by-your-grace">Adventure</span></span>, Planned<br />
-                <span className="text-white">in Minutes</span>
-              </h1>
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 mb-6 sm:mb-8 max-w-2xl leading-relaxed font-normal">
-                Set your starting point and destination to begin your journey.<br />
-                It&apos;s quick, simple, and built to get you moving.
-              </p>
-              <SmartCTAButton>
-                Get Early Access
-              </SmartCTAButton>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Hero />
 
       <LocalVsTourist />
 

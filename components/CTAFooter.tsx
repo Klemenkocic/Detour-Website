@@ -28,33 +28,33 @@ export default function CTAFooter() {
   }
 
   return (
-    <footer className="py-8 bg-white">
-      <div className="max-w-none mx-auto px-4 lg:px-6">
+    <footer className="py-6 sm:py-8 bg-white overflow-hidden">
+      <div className="max-w-none mx-auto px-4 sm:px-6">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="w-full px-6 sm:px-12 lg:px-16 pt-12 sm:pt-16 pb-6 sm:pb-8 relative bg-detour-gray900 rounded-3xl flex flex-col justify-start items-start gap-8 sm:gap-14"
+          className="w-full px-4 sm:px-6 lg:px-16 pt-8 sm:pt-12 lg:pt-16 pb-6 sm:pb-8 relative bg-detour-gray900 rounded-2xl sm:rounded-3xl flex flex-col justify-start items-start gap-6 sm:gap-8 lg:gap-14"
         >
           {/* Main CTA Section */}
           <motion.div 
             variants={itemVariants}
-            className="w-full flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 lg:gap-0"
+            className="w-full flex flex-col lg:flex-row justify-between items-center lg:items-center gap-8 lg:gap-0"
           >
             {/* Left Side - Headline */}
-            <div className="flex-1 max-w-[651px] justify-start text-white text-3xl sm:text-4xl lg:text-6xl font-semibold font-inter leading-tight lg:leading-[83.20px]">
+            <div className="flex-1 max-w-full lg:max-w-[651px] justify-start text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold font-inter leading-tight lg:leading-[83.20px] text-center lg:text-left">
               Join the Adventure Today!
             </div>
             
             {/* Right Side - CTA Button */}
-            <div className="w-full lg:flex-1 lg:max-w-[577px] flex flex-col justify-end items-start gap-4">
-              <div className="self-stretch justify-start text-white text-lg font-normal font-inter leading-relaxed tracking-tight">
+            <div className="w-full lg:flex-1 lg:max-w-[577px] flex flex-col justify-end items-center lg:items-start gap-4 text-center lg:text-left">
+              <div className="self-stretch justify-start text-white text-base sm:text-lg font-normal font-inter leading-relaxed tracking-tight">
                 Ready to explore the world? Start your journey with us today.
               </div>
               
               {/* CTA Button */}
-              <div className="self-stretch">
+              <div className="self-stretch flex justify-center lg:justify-start">
                 <SmartCTAButton>
                   Get Early Access
                 </SmartCTAButton>

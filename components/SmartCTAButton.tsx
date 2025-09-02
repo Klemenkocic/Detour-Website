@@ -25,7 +25,7 @@ export default function SmartCTAButton({ children, className = '', size = 'md' }
     lg: 'h-12 px-5 py-2.5 text-base'
   }
 
-  const buttonClasses = `inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-2xl border border-white bg-gradient-to-b from-orange-400 to-orange-600 text-white hover:from-orange-500 hover:to-orange-700 focus:ring-orange-500 cursor-pointer ${sizes[size]} ${className}`
+  const buttonClasses = `inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-2xl border border-white bg-gradient-to-b from-orange-400 to-orange-600 text-white hover:from-orange-500 hover:to-orange-700 focus:ring-orange-500 cursor-pointer whitespace-nowrap ${sizes[size]} ${className}`
 
   return (
     <motion.button

@@ -29,8 +29,8 @@ export default function SeeBeforeBegins() {
   }
 
   return (
-    <section className="py-40 bg-white overflow-visible relative">
-      <Container>
+    <section className="py-16 sm:py-20 lg:py-40 bg-white relative z-[1] lg:z-[100]">
+      <Container className="overflow-visible">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -38,29 +38,27 @@ export default function SeeBeforeBegins() {
           viewport={{ once: true, margin: "-100px" }}
           className="relative"
         >
-
-
           {/* Main Content */}
-          <div className="relative z-10 max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+          <div className="relative z-[1] lg:z-10 max-w-7xl mx-auto">
+            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
               {/* Left Side - Content with 3 rows */}
-              <motion.div variants={itemVariants} className="relative z-10">
-                <div className="max-w-[568px] flex flex-col justify-center gap-6">
+              <motion.div variants={itemVariants} className="relative z-[1] lg:z-10 text-center lg:text-left w-full">
+                <div className="max-w-[568px] mx-auto lg:mx-0 flex flex-col justify-center gap-4 sm:gap-6">
                   {/* Row 1: Header */}
                   <div className="relative">
-                    <h1 className="text-6xl font-semibold leading-[83.2px] text-gray-900">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight lg:leading-[83.2px] text-gray-900">
                       See Your{' '}
                       <span className="line-through">Journey</span>{' '}
                       Before It Begins
                     </h1>
-                    {/* Adventure text overlay */}
-                    <div className="absolute top-[-18px] left-[268px] transform -rotate-[3.28deg] text-orange-500 text-4xl font-normal font-['Covered_By_Your_Grace'] leading-10">
+                    {/* Adventure text overlay - responsive positioning */}
+                    <div className="absolute top-[-12px] sm:top-[-14px] lg:top-[-18px] left-[50%] sm:left-[55%] lg:left-[268px] transform -translate-x-1/2 lg:translate-x-0 -rotate-[3.28deg] text-orange-500 text-2xl sm:text-3xl lg:text-4xl font-normal font-['Covered_By_Your_Grace'] leading-10 whitespace-nowrap">
                       Adventure
                     </div>
                   </div>
                   
                   {/* Row 2: Subtext */}
-                  <p className="text-lg text-gray-700 leading-relaxed tracking-tight">
+                  <p className="text-base sm:text-lg text-gray-700 leading-relaxed tracking-tight">
                     From detailed 2D maps to breathtaking 3D flyovers – watch your route come alive before you even hit the road.
                   </p>
                   
@@ -73,29 +71,29 @@ export default function SeeBeforeBegins() {
                 </div>
               </motion.div>
 
-              {/* Right Side - CTA Image */}
-              <motion.div variants={itemVariants} className="relative">
-                <div 
-                  className="absolute z-[5]"
-                  style={{
-                    // === IMAGE CONFIGURATION ===
-                    // Adjust these values to position and size the image:
-                    transform: `translate(${-120}px, ${-120}px) scale(${3.1})`,
-                    // translate(X, Y) - X: negative=left, positive=right | Y: negative=up, positive=down
-                    // scale() - 1.0=normal, 2.0=double size, 0.5=half size
-                    transformOrigin: 'center center', // Options: 'center center', 'left top', 'right bottom', etc.
-                    // === END CONFIGURATION ===
-                  }}
-                >
-                  <Image
-                    src="/detour/cta/cta.png"
-                    alt="Interactive trip preview showing detailed itinerary with photos, timing, and route visualization for a Barcelona road trip"
-                    width={800}
-                    height={1000}
-                    className="w-full h-auto max-w-2xl"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 800px"
-                    priority
-                  />
+              {/* Right Side - CTA Image (Desktop Only) */}
+              <motion.div variants={itemVariants} className="hidden lg:block relative w-full lg:z-[9998]">
+                {/* Desktop Layout */}
+                <div className="relative">
+                  <div 
+                    className="absolute lg:z-[9999]"
+                    style={{
+                      // === DESKTOP IMAGE CONFIGURATION ===
+                      transform: `translate(-120px, -120px) scale(3.1)`,
+                      transformOrigin: 'center center',
+                      // === END CONFIGURATION ===
+                    }}
+                  >
+                    <Image
+                      src="/detour/cta/cta.png"
+                      alt="Interactive trip preview showing detailed itinerary with photos, timing, and route visualization for a Barcelona road trip"
+                      width={800}
+                      height={1000}
+                      className="w-full h-auto max-w-2xl"
+                      sizes="(max-width: 1200px) 60vw, 800px"
+                      priority
+                    />
+                  </div>
                 </div>
               </motion.div>
             </div>

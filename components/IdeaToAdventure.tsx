@@ -28,7 +28,7 @@ export default function IdeaToAdventure() {
   }
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 sm:py-16 lg:py-20 bg-white overflow-hidden">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
@@ -36,26 +36,28 @@ export default function IdeaToAdventure() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {/* Main Panel - Exact Figma Specifications */}
+          {/* Main Panel - Responsive */}
           <motion.div 
             variants={itemVariants}
-            className="w-full h-[851px] px-4 sm:px-8 lg:px-16 pt-20 pb-24 relative bg-detour-primarySoft rounded-3xl flex flex-col justify-start items-start gap-8 overflow-hidden"
+            className="w-full min-h-[600px] lg:h-[851px] px-4 sm:px-8 lg:px-16 pt-12 sm:pt-16 lg:pt-20 pb-16 sm:pb-20 lg:pb-24 relative bg-detour-primarySoft rounded-2xl sm:rounded-3xl flex flex-col justify-start items-start gap-6 sm:gap-8 overflow-hidden z-[1]"
           >
             {/* Header Content */}
-            <div className="relative z-10 flex flex-col justify-start items-start gap-6">
-              <div className="w-[526px] justify-start text-detour-gray900 text-5xl font-semibold font-inter leading-[57.60px] tracking-tight">
+            <div className="relative z-[2] flex flex-col justify-start items-start gap-4 sm:gap-6 max-w-full text-center lg:text-left">
+              <div className="max-w-full lg:w-[526px] justify-start text-detour-gray900 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold font-inter leading-tight lg:leading-[57.60px] tracking-tight">
                 From idea to adventure in just a few clicks
               </div>
-              <div className="w-[457px] justify-start text-detour-gray700 text-lg font-normal font-inter leading-relaxed tracking-tight">
+              <div className="max-w-full lg:w-[457px] justify-start text-detour-gray700 text-sm sm:text-base lg:text-lg font-normal font-inter leading-relaxed tracking-tight">
                 We&apos;ve simplified trip planning so you can spend less time organizing and more time exploring. Here&apos;s how Detour transforms your idea into a fully visualized, ready-to-go adventure.
               </div>
-                            <SmartCTAButton size="lg">
-                Get Early Access
-              </SmartCTAButton>
+              <div className="self-center lg:self-start">
+                <SmartCTAButton size="lg">
+                  Get Early Access
+                </SmartCTAButton>
+              </div>
             </div>
 
             {/* Interactive Area - Exact Positioning */}
-            <div className="w-full h-[726px] left-0 right-0 top-[74px] absolute hidden lg:block">
+            <div className="w-full h-[726px] left-0 right-0 top-[74px] absolute hidden lg:block z-[1]">
               {/* Curved Line Path - SVG */}
               <svg
                 className="absolute inset-0 w-full h-full pointer-events-none"

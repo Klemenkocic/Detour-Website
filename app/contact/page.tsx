@@ -12,7 +12,7 @@ export default function ContactPage() {
     <>
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
-        <div className="w-full px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between py-3">
             {/* Logo */}
             <div className="flex-shrink-0">
@@ -28,16 +28,31 @@ export default function ContactPage() {
               </a>
             </div>
             
-            {/* Navigation Links */}
+            {/* Navigation Links - Desktop */}
             <div className="hidden md:flex items-center space-x-10">
               <a href="/docs" className="text-detour-gray700 hover:text-detour-primary font-medium transition-colors text-sm">Documentation</a>
               <a href="/contact" className="text-detour-gray700 hover:text-detour-primary font-medium transition-colors text-sm">Contact</a>
             </div>
             
-            {/* CTA Button */}
-            <SmartCTAButton>
-              Get Early Access
-            </SmartCTAButton>
+            {/* Desktop CTA Button */}
+            <div className="hidden md:block">
+              <SmartCTAButton>
+                Get Early Access
+              </SmartCTAButton>
+            </div>
+
+            {/* Mobile Back Button */}
+            <div className="md:hidden">
+              <a 
+                href="/"
+                className="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 inline-flex items-center justify-center"
+                aria-label="Go back to home"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </nav>
