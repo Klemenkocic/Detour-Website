@@ -1,4 +1,5 @@
 import './globals.css'
+import CookieConsent from '../components/CookieConsent'
 
 export default function RootLayout({
   children,
@@ -8,18 +9,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1H4YCWP11"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-Q1H4YCWP11');
-            `,
-          }}
-        />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
         <title>Detour — Your Next Trip, Planned in Minutes</title>
         <meta name="description" content="Plan epic road trips in minutes with smart stops, visual inspiration, and effortless editing." />
@@ -29,6 +18,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         {children}
+        <CookieConsent />
       </body>
     </html>
   )
