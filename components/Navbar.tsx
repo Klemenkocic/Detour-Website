@@ -54,6 +54,7 @@ export default function Navbar() {
                 height={40}
                 className="object-contain"
                 priority
+                sizes="140px"
               />
             </a>
           </div>
@@ -103,6 +104,7 @@ export default function Navbar() {
                   width={120}
                   height={32}
                   className="object-contain"
+                  sizes="120px"
                 />
               </a>
               <button
