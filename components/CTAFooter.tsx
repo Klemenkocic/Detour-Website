@@ -105,7 +105,7 @@ export default function CTAFooter() {
                   Contact
                 </a>
                 <a 
-                  href="https://instagram.com/detour" 
+                  href="https://www.instagram.com/travel_with_detour?igsh=eXM1dzJ6dnhjZTc3&utm_source=qr" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-white hover:text-detour-primary transition-colors p-1"
