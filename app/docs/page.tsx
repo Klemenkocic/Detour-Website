@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Container from '../../components/ui/Container'
 import SmartCTAButton from '../../components/SmartCTAButton'
+import Navbar from '../../components/Navbar'
 
 export const metadata = {
   title: 'Documentation - Detour',
@@ -10,37 +11,7 @@ export const metadata = {
 export default function DocsPage() {
   return (
     <>
-      {/* Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
-        <div className="w-full px-6 lg:px-8">
-          <div className="flex items-center justify-between py-3">
-            {/* Logo */}
-            <div className="flex-shrink-0">
-              <a href="/" className="cursor-pointer">
-                <Image
-                  src="/detour/branding/logo/horizontal/dark and primary.png"
-                  alt="Detour"
-                  width={140}
-                  height={40}
-                  className="object-contain"
-                  priority
-                />
-              </a>
-            </div>
-            
-            {/* Navigation Links */}
-            <div className="hidden md:flex items-center space-x-10">
-              <a href="/docs" className="text-detour-gray700 hover:text-detour-primary font-medium transition-colors text-sm">Documentation</a>
-              <a href="/contact" className="text-detour-gray700 hover:text-detour-primary font-medium transition-colors text-sm">Contact</a>
-            </div>
-            
-            {/* CTA Button */}
-            <SmartCTAButton>
-              Get Early Access
-            </SmartCTAButton>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       <main className="pt-20">
         <Container className="py-16">
