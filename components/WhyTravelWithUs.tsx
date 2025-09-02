@@ -99,10 +99,10 @@ export default function WhyTravelWithUs() {
           {/* Column 3: Visual Inspiration Built In */}
           <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-lg h-full">
             <h3 className="text-xl font-bold text-detour-gray900 mb-3">Visual Inspiration Built In</h3>
-            <p className="text-detour-gray700 mb-6">
+            <p className="text-detour-gray700 mb-2">
               Every stop comes with stunning photos and local insights to help you decide what&apos;s worth the detour, turning your planning process into an inspiring part of the journey.
             </p>
-            <div className="relative aspect-[6/5] rounded-lg overflow-hidden">
+            <div className="relative aspect-[6/5] rounded-lg overflow-hidden mt-16">
               <Image
                 src="/detour/features/visual-inspiration.png"
                 alt="Visual inspiration gallery with travel photos"

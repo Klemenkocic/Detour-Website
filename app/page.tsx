@@ -51,7 +51,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="pt-0 pb-8 bg-gray-50">
         <div className="w-full px-6 lg:px-8">
-          <div className="relative min-h-[85vh] flex items-center justify-start overflow-hidden rounded-3xl mt-24">
+          <div className="relative min-h-[85vh] flex items-center justify-center overflow-hidden rounded-3xl mt-24">
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
               <Image
@@ -66,7 +66,7 @@ export default function Home() {
             </div>
             
             {/* Content */}
-            <div className="relative z-10 text-left text-white px-6 sm:px-12">
+            <div className="relative z-10 text-center text-white px-6 sm:px-12">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-4 sm:mb-6">
                 Your Next <span className="relative"><span className="line-through">Trip</span><span className="absolute -top-4 sm:-top-6 md:-top-8 left-0 text-detour-primary text-lg sm:text-2xl md:text-3xl lg:text-4xl font-covered-by-your-grace">Adventure</span></span>, Planned<br />
                 <span className="text-white">in Minutes</span>
