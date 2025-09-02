@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Container from '../../components/ui/Container'
 import SmartCTAButton from '../../components/SmartCTAButton'
 import Navbar from '../../components/Navbar'
+import CTAFooter from '../../components/CTAFooter'
 
 export const metadata = {
   title: 'Documentation - Detour',
@@ -68,19 +69,34 @@ export default function DocsPage() {
               </div>
             </div>
             
-            {/* Car Character - Bottom Right */}
-            <div className="absolute bottom-4 right-4 w-16 h-16">
+            {/* Car Character - Bottom Right (Desktop Only) */}
+            <div className="hidden md:block absolute bottom-0 right-0 w-32 h-32 opacity-20">
               <Image
                 src="/detour/strips/Car.png"
                 alt="Car character"
-                width={64}
-                height={64}
+                width={128}
+                height={128}
+                className="object-contain"
+              />
+            </div>
+          </div>
+          
+          {/* Car Character - Below Box (Mobile Only) */}
+          <div className="md:hidden flex justify-end mt-4 -mb-12">
+            <div className="w-24 h-24 opacity-30">
+              <Image
+                src="/detour/strips/Car.png"
+                alt="Car character"
+                width={96}
+                height={96}
                 className="object-contain"
               />
             </div>
           </div>
         </Container>
       </main>
+      
+      <CTAFooter />
     </>
   )
 }

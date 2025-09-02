@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Container from '../../components/ui/Container'
 import SmartCTAButton from '../../components/SmartCTAButton'
 import Navbar from '../../components/Navbar'
+import CTAFooter from '../../components/CTAFooter'
 
 export const metadata = {
   title: 'Contact - Detour',
@@ -60,6 +61,8 @@ export default function ContactPage() {
           </div>
         </Container>
       </main>
+      
+      <CTAFooter />
     </>
   )
 }
